@@ -4,3 +4,9 @@ body {
   height: 100%;
   width: 100%;
 }
+
+body {
+  background-image: url(src/assets/images/eldenRing.jpg);
+  background-size: cover;
+  background-position: top;
+}
