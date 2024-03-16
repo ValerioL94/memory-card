@@ -7,9 +7,7 @@ footer {
   color: rgba(230, 200, 146, 255);
   background-color: rgba(0, 0, 0, 0.5);
 }
-footer a:visited {
-  color: lightcoral;
-}
+
 footer .about {
   display: flex;
   align-items: center;

@@ -1,11 +1,11 @@
 header {
   background-color: rgba(0, 0, 0, 0.5);
-
-  padding: 10px 30px;
+  padding: 10px 25px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 1px;
   font-family: MantiniaRegular;
   color: rgba(230, 200, 146, 255);
 }
