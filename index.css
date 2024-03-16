@@ -1,12 +1,20 @@
+@font-face {
+  font-family: MantiniaRegular;
+  src: url('/font/MantiniaRegular.otf') format('opentype');
+}
+
 html,
 body {
   margin: 0;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
 }
 
 body {
-  background-image: url(src/assets/images/eldenRing.jpg);
-  background-size: cover;
-  background-position: top;
+  background: url(/images/eldenRing.jpg) no-repeat top/auto;
+}
+
+@media screen and (min-width: 1441px) {
+  body {
+    background-size: cover;
+  }
 }

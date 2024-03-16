@@ -2,9 +2,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* height: 100%; */
+  padding: 25px;
 }
 .box {
   border: 1px solid white;
-  height: 500px;
-  width: 1000px;
+  height: 600px;
+  width: 100%;
 }

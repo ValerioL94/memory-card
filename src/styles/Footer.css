@@ -2,18 +2,24 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: white;
+  color: rgba(230, 200, 146, 255);
   background-color: rgba(0, 0, 0, 0.5);
 }
 footer a:visited {
   color: lightcoral;
 }
-footer .logo {
-  height: 30px;
-  transition: transform 0.5s;
+footer .about {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+footer .logo {
+  height: 25px;
+  transition: all ease-in-out 0.5s;
+}
+
 footer .logo:hover {
   transform: scale(1.2);
 }
