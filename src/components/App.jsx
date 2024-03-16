@@ -1,8 +1,14 @@
-import { useState } from 'react';
-import '/src/styles/App.css';
+import Header from './Header.jsx';
+import Main from './Main.jsx';
+import Footer from './Footer.jsx';
+import '../styles/App.css';
 
-function App() {
-  return 'template';
+export default function App() {
+  return (
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
+  );
 }
-
-export default App;
