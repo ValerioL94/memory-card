@@ -7,10 +7,14 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+  font-family: MantiniaRegular;
+  color: rgba(230, 200, 146, 255);
 }
 header h1 {
   font-size: 3rem;
+  margin: 0;
 }
 header p {
-  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0;
 }
