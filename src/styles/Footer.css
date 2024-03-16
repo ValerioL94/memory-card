@@ -1,0 +1,19 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+footer a:visited {
+  color: lightcoral;
+}
+footer .logo {
+  height: 30px;
+  transition: transform 0.5s;
+}
+footer .logo:hover {
+  transform: scale(1.2);
+}
