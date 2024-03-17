@@ -24,8 +24,18 @@ export default function AudioPlayer() {
       });
   }, [isPlaying]);
   return (
-    <button type="button" onClick={() => setIsPlaying(!isPlaying)}>
-      {isPlaying ? 'Pause' : 'Play'}
+    <button
+      id="audioBtn"
+      className={isPlaying ? 'pulse' : ''}
+      type="button"
+      onClick={() => setIsPlaying(!isPlaying)}
+    >
+      <span></span>
+      <img
+        className="playPause"
+        src={isPlaying ? '/icons/pause.png' : '/icons/play.png'}
+        alt="play pause button"
+      />
     </button>
   );
 }

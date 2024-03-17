@@ -1,0 +1,36 @@
+#audioBtn {
+  position: absolute;
+  left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230, 200, 146, 255);
+  padding: 0;
+  border-width: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.playPause {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.pulse span {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 5px solid rgba(230, 200, 146, 255);
+  border-radius: inherit;
+  animation: pulse linear 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}

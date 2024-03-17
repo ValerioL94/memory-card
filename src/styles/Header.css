@@ -5,7 +5,6 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1px;
   font-family: MantiniaRegular;
   color: rgba(230, 200, 146, 255);
 }
