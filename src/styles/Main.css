@@ -6,8 +6,8 @@ main {
   font-family: MantiniaRegular;
   color: rgba(230, 200, 146, 255);
 }
-.box {
-  /* border: 1px solid white; */
-  height: 600px;
+.container {
+  border: 1px solid white;
+  min-height: 500px;
   width: 100%;
 }

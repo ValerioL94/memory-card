@@ -2,7 +2,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
+  padding: 0 25px;
   font-size: 1.3rem;
   font-weight: 600;
   color: rgba(230, 200, 146, 255);
@@ -12,7 +13,7 @@ footer {
 footer .about {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 footer .logo {
   height: 25px;
