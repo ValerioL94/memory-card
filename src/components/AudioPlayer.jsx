@@ -26,11 +26,11 @@ export default function AudioPlayer() {
   return (
     <button
       id="audioBtn"
-      className={isPlaying ? 'pulse' : ''}
+      className={isPlaying ? '' : 'pulse'}
       type="button"
       onClick={() => setIsPlaying(!isPlaying)}
     >
-      <span></span>
+      <span className={isPlaying ? 'pulseWave' : ''}></span>
       <img
         className="playPause"
         src={isPlaying ? '/icons/pause.png' : '/icons/play.png'}

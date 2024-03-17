@@ -3,9 +3,11 @@ main {
   align-items: center;
   justify-content: center;
   padding: 25px;
+  font-family: MantiniaRegular;
+  color: rgba(230, 200, 146, 255);
 }
 .box {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   height: 600px;
   width: 100%;
 }

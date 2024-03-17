@@ -1,6 +1,7 @@
 #audioBtn {
-  position: absolute;
-  left: 25px;
+  /* position: absolute;
+  left: 2.5%; */
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,16 +17,63 @@
   border-radius: 50%;
 }
 
-.pulse span {
+.pulse {
+  animation: pulse
+    linear(
+      0 0%,
+      0.22 2.1%,
+      0.86 6.5%,
+      1.11 8.6%,
+      1.3 10.7%,
+      1.35 11.8%,
+      1.37 12.9%,
+      1.37 13.7%,
+      1.36 14.5%,
+      1.32 16.2%,
+      1.03 21.8%,
+      0.94 24%,
+      0.89 25.9%,
+      0.88 26.85%,
+      0.87 27.8%,
+      0.87 29.25%,
+      0.88 30.7%,
+      0.91 32.4%,
+      0.98 36.4%,
+      1.01 38.3%,
+      1.04 40.5%,
+      1.05 42.7%,
+      1.05 44.1%,
+      1.04 45.7%,
+      1 53.3%,
+      0.99 55.4%,
+      0.98 57.5%,
+      0.99 60.7%,
+      1 68.1%,
+      1.01 72.2%,
+      1 86.7%,
+      1 100%
+    )
+    1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.pulseWave {
   position: absolute;
   height: 100%;
   width: 100%;
   border: 5px solid rgba(230, 200, 146, 255);
   border-radius: inherit;
-  animation: pulse linear 1.5s infinite;
+  animation: pulseWave linear 1.5s infinite;
 }
 
-@keyframes pulse {
+@keyframes pulseWave {
   0% {
     transform: scale(0.8);
   }
