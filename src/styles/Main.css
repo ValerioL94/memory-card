@@ -6,7 +6,7 @@ main {
   font-family: MantiniaRegular;
   color: rgba(230, 200, 146, 255);
 }
-.container {
+.cardsContainer {
   min-height: 500px;
   width: 100%;
 }
@@ -16,8 +16,9 @@ main {
   flex-direction: column;
   text-align: center;
   gap: 30px;
-  padding-bottom: 50px;
+  padding: 35px;
   margin: auto;
+  width: 600px;
   max-width: 600px;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.75);
