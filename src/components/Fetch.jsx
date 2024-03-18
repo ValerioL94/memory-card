@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const Fetch = ({ category }) => {
+const Fetch = ({ category, limit }) => {
   const [spells, setSpells] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ const Fetch = ({ category }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          'https://eldenring.fanapis.com/api/' + category + '?limit=12'
+          'https://eldenring.fanapis.com/api/' + category + '?limit=' + limit
         );
         if (!response.ok) {
           throw new Error(`HTTP error: Status ${response.status}`);
@@ -24,7 +24,7 @@ const Fetch = ({ category }) => {
       }
     };
     fetchData();
-  }, [category]);
+  }, [category, limit]);
   return (
     <>
       {loading && (

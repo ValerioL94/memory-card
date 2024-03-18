@@ -4,12 +4,16 @@ import { useState } from 'react';
 
 export default function Main() {
   const [category, setCategory] = useState('');
-
+  const [round, setRound] = useState(2);
+  let limit;
+  if (round === 1) limit = 4;
+  if (round === 2) limit = 8;
+  if (round === 3) limit = 12;
   return (
     <main>
       {category ? (
         <div className="cardsContainer">
-          <Fetch category={category} />
+          <Fetch category={category} limit={limit} />
         </div>
       ) : (
         <div className="playerChoice">
