@@ -7,7 +7,66 @@ main {
   color: rgba(230, 200, 146, 255);
 }
 .container {
-  border: 1px solid white;
   min-height: 500px;
   width: 100%;
+}
+.playerChoice {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+  padding-bottom: 50px;
+  margin: auto;
+  max-width: 600px;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 15px 5px;
+}
+.choiceWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+.choice img {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.choice h2 {
+  margin: 0;
+}
+
+.choiceWrapper button {
+  background: none;
+  border: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+#sorceries {
+  color: lightskyblue;
+}
+#sorceries > button:hover,
+#sorceries > button:focus {
+  outline: lightskyblue;
+  box-shadow: 5px 5px 25px 5px lightskyblue;
+  transform: scale(1.05);
+}
+#incantations {
+  color: goldenrod;
+}
+#incantations > button:hover,
+#incantations > button:focus {
+  outline: goldenrod;
+  box-shadow: 5px 5px 25px 5px goldenrod;
+  transform: scale(1.1);
 }
