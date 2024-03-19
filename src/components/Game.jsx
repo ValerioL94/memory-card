@@ -8,10 +8,18 @@ const getRequest = async (url) => {
   }
   return response.json();
 };
-const Game = ({ category }) => {
+const Game = ({
+  category,
+  currentScore,
+  setCurrentScore,
+  bestScore,
+  setBestScore,
+}) => {
   const [spells, setSpells] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [gameOver, setIsGameOver] = useState(false);
+  const [selectedCards, setSelectedCards] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +39,30 @@ const Game = ({ category }) => {
     fetchData();
   }, [category]);
 
-  return (
+  function playRound(e) {
+    let item = e.target.closest('div');
+    if (selectedCards.includes(item.id)) return setIsGameOver(true);
+    setSelectedCards([...selectedCards, item.id]);
+    setCurrentScore((score) => score + 1);
+  }
+
+  useEffect(() => {
+    spells && currentScore > bestScore && setBestScore(currentScore);
+    spells && spells.length === selectedCards.length && setIsGameOver(true);
+  }, [selectedCards.length, spells, currentScore, bestScore, setBestScore]);
+
+  return gameOver ? (
+    <div
+      style={{
+        width: 300,
+        textAlign: 'center',
+        backgroundColor: 'rgba(0,0,0,0.75)',
+        borderRadius: 25,
+      }}
+    >
+      <h1>GAME IS OVER</h1>
+    </div>
+  ) : (
     <div className="cardsContainer">
       {loading && (
         <div className="loading">
@@ -45,7 +76,12 @@ const Game = ({ category }) => {
       )}
       {spells &&
         spells.map((spell) => (
-          <div className={'card' + ' ' + category} key={spell.id}>
+          <div
+            id={spell.id}
+            className={'card' + ' ' + category}
+            key={spell.id}
+            onClick={playRound}
+          >
             <img src={spell.image} alt={spell.name} height={200} width={200} />
             <h2>{spell.name.toUpperCase()}</h2>
           </div>

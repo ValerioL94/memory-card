@@ -1,9 +1,6 @@
 import '../styles/Header.css';
-// import { useState } from 'react';
 
-export default function Header() {
-  // const [currentScore, setCurrentScore] = useState(0);
-  // const [bestScore, setBestScore] = useState(0);
+export default function Header({ score, bestScore }) {
   return (
     <header>
       <div>
@@ -11,8 +8,8 @@ export default function Header() {
         <p>Select a different card each time to advance to the next round</p>
       </div>
       <div className="scoreTab">
-        <h2>SCORE : {0}</h2>
-        <h2>BEST SCORE : {0}</h2>
+        <h2>SCORE : {score}</h2>
+        <h2>BEST SCORE : {bestScore}</h2>
       </div>
     </header>
   );

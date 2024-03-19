@@ -2,13 +2,24 @@ import '../styles/Main.css';
 import Game from './Game';
 import { useState } from 'react';
 
-export default function Main() {
+export default function Main({
+  currentScore,
+  setCurrentScore,
+  bestScore,
+  setBestScore,
+}) {
   const [category, setCategory] = useState('');
 
   return (
     <main>
       {category ? (
-        <Game category={category} />
+        <Game
+          category={category}
+          currentScore={currentScore}
+          setCurrentScore={setCurrentScore}
+          bestScore={bestScore}
+          setBestScore={setBestScore}
+        />
       ) : (
         <div className="playerChoice">
           <h1>CHOOSE A CATEGORY</h1>
