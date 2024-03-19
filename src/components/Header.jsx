@@ -1,5 +1,6 @@
 import '../styles/Header.css';
 // import { useState } from 'react';
+
 export default function Header() {
   // const [currentScore, setCurrentScore] = useState(0);
   // const [bestScore, setBestScore] = useState(0);

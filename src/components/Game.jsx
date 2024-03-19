@@ -1,19 +1,24 @@
+import '../styles/Game.css';
 import { useState, useEffect } from 'react';
 
-const Fetch = ({ category, limit }) => {
+const getRequest = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error: Status ${response.status}`);
+  }
+  return response.json();
+};
+const Game = ({ category }) => {
   const [spells, setSpells] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          'https://eldenring.fanapis.com/api/' + category + '?limit=' + limit
+        const spellsData = await getRequest(
+          'https://eldenring.fanapis.com/api/' + category + '?limit=12'
         );
-        if (!response.ok) {
-          throw new Error(`HTTP error: Status ${response.status}`);
-        }
-        let spellsData = await response.json();
         setSpells(spellsData.data);
         setError(null);
       } catch (err) {
@@ -24,32 +29,17 @@ const Fetch = ({ category, limit }) => {
       }
     };
     fetchData();
-  }, [category, limit]);
+  }, [category]);
+
   return (
-    <>
+    <div className="cardsContainer">
       {loading && (
-        <div
-          className="loading"
-          style={{
-            backgroundColor: 'rgba(0,0,0,0.75)',
-            textAlign: 'center',
-            padding: '0 25px',
-            borderRadius: '25px',
-          }}
-        >
+        <div className="loading">
           <h1>LOADING...</h1>
         </div>
       )}
       {error && (
-        <div
-          className="error"
-          style={{
-            backgroundColor: 'rgba(0,0,0,0.75)',
-            textAlign: 'center',
-            padding: '0 25px',
-            borderRadius: '25px',
-          }}
-        >
+        <div className="error">
           <h1>{error}</h1>
         </div>
       )}
@@ -60,8 +50,8 @@ const Fetch = ({ category, limit }) => {
             <h2>{spell.name.toUpperCase()}</h2>
           </div>
         ))}
-    </>
+    </div>
   );
 };
 
-export default Fetch;
+export default Game;

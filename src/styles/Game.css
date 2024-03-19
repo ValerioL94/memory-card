@@ -1,0 +1,36 @@
+.cardsContainer {
+  min-height: 600px;
+  width: 100%;
+  min-width: 250px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  height: 300px;
+  font-family: MantiniaRegular;
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 2px solid;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.1s linear;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.loading,
+.error {
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  padding: 0 25px;
+  border-radius: 25px;
+}

@@ -1,6 +1,7 @@
 import '../styles/Footer.css';
 import './AudioPlayer.jsx';
 import AudioPlayer from './AudioPlayer.jsx';
+
 export default function footer() {
   return (
     <footer>
