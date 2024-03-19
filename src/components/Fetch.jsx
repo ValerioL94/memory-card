@@ -28,18 +28,34 @@ const Fetch = ({ category, limit }) => {
   return (
     <>
       {loading && (
-        <div className="loading">
+        <div
+          className="loading"
+          style={{
+            backgroundColor: 'rgba(0,0,0,0.75)',
+            textAlign: 'center',
+            padding: '0 25px',
+            borderRadius: '25px',
+          }}
+        >
           <h1>LOADING...</h1>
         </div>
       )}
       {error && (
-        <div className="error">
+        <div
+          className="error"
+          style={{
+            backgroundColor: 'rgba(0,0,0,0.75)',
+            textAlign: 'center',
+            padding: '0 25px',
+            borderRadius: '25px',
+          }}
+        >
           <h1>{error}</h1>
         </div>
       )}
       {spells &&
         spells.map((spell) => (
-          <div className={'card' + ' ' + category} key={spell.id} tabIndex={0}>
+          <div className={'card' + ' ' + category} key={spell.id}>
             <img src={spell.image} alt={spell.name} height={200} width={200} />
             <h2>{spell.name.toUpperCase()}</h2>
           </div>
