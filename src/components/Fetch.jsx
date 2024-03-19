@@ -39,7 +39,7 @@ const Fetch = ({ category, limit }) => {
       )}
       {spells &&
         spells.map((spell) => (
-          <div className={'card' + ' ' + category} key={spell.id}>
+          <div className={'card' + ' ' + category} key={spell.id} tabIndex={0}>
             <img src={spell.image} alt={spell.name} height={200} width={200} />
             <h2>{spell.name.toUpperCase()}</h2>
           </div>
