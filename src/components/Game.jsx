@@ -10,6 +10,7 @@ const getRequest = async (url) => {
 };
 const Game = ({
   category,
+  setCategory,
   currentScore,
   setCurrentScore,
   bestScore,
@@ -44,6 +45,21 @@ const Game = ({
     if (selectedCards.includes(item.id)) return setIsGameOver(true);
     setSelectedCards([...selectedCards, item.id]);
     setCurrentScore((score) => score + 1);
+    shuffleCards();
+  }
+  function shuffleCards() {
+    let shuffled = spells
+      .map((value) => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+
+    setSpells(shuffled);
+  }
+  function resetGame() {
+    setCategory('');
+    setCurrentScore(0);
+    let body = document.querySelector('body');
+    body.className = 'blackout';
   }
 
   useEffect(() => {
@@ -59,7 +75,9 @@ const Game = ({
           : 'WELL DONE TARNISHED, YOU GOT A PERFECT SCORE!'}
       </h1>
       <h2>If you want to play again you can use the grace below </h2>
-      <button type="button">Reset</button>
+      <button onClick={resetGame} type="button">
+        Reset
+      </button>
     </div>
   ) : (
     <div className="cardsContainer">

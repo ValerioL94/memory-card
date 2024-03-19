@@ -15,6 +15,7 @@ export default function Main({
       {category ? (
         <Game
           category={category}
+          setCategory={setCategory}
           currentScore={currentScore}
           setCurrentScore={setCurrentScore}
           bestScore={bestScore}
