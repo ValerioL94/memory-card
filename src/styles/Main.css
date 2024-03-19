@@ -7,7 +7,8 @@ main {
 }
 
 .playerChoice {
-  font-family: MantiniaRegular;
+  font-family: MantiniaRegular, 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

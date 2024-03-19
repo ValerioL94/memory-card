@@ -52,15 +52,14 @@ const Game = ({
   }, [selectedCards.length, spells, currentScore, bestScore, setBestScore]);
 
   return gameOver ? (
-    <div
-      style={{
-        width: 300,
-        textAlign: 'center',
-        backgroundColor: 'rgba(0,0,0,0.75)',
-        borderRadius: 25,
-      }}
-    >
-      <h1>GAME IS OVER</h1>
+    <div className="gameOver">
+      <h1>
+        {currentScore < 12
+          ? 'TARNISHED, YOU CAN DO BETTER THAN THAT!'
+          : 'WELL DONE TARNISHED, YOU GOT A PERFECT SCORE!'}
+      </h1>
+      <h2>If you want to play again you can use the grace below </h2>
+      <button type="button">Reset</button>
     </div>
   ) : (
     <div className="cardsContainer">

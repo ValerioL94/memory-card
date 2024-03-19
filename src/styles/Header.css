@@ -5,7 +5,8 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  font-family: MantiniaRegular;
+  font-family: MantiniaRegular, 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: rgba(230, 200, 146, 255);
 }
 header h1 {
