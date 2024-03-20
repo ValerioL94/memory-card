@@ -50,7 +50,7 @@
   height: 100%;
   width: 100%;
   backface-visibility: hidden;
-  padding: 25px;
+  padding: 5px;
   border: 2px solid;
   border-radius: 25px;
   background-color: rgba(0, 0, 0, 0.75);
