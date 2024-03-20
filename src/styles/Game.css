@@ -37,22 +37,6 @@
   }
 }
 
-.card.back.sorceries {
-  background-image: url(/images/sorceryScroll.webp);
-  background-size: 250px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: rotateY(180deg);
-}
-
-.card.back.incantations {
-  background-image: url(/images/prayerBook.webp);
-  background-size: 250px;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: rotateY(180deg);
-}
-
 .card {
   font-family: MantiniaRegular, 'Lucida Sans', 'Lucida Sans Regular',
     'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -73,6 +57,22 @@
   transition: all 0.1s linear;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+.card.back.sorceries {
+  background-image: url(/images/sorceryScroll.webp);
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.card.back.incantations {
+  background-image: url(/images/prayerBook.webp);
+  background-size: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotateY(180deg);
 }
 
 .loading,
