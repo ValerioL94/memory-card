@@ -21,6 +21,7 @@ const Game = ({
   const [error, setError] = useState(null);
   const [gameOver, setIsGameOver] = useState(false);
   const [selectedCards, setSelectedCards] = useState([]);
+  const [flip, setFlip] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,26 +41,33 @@ const Game = ({
     fetchData();
   }, [category]);
 
+  function handleKeyUp(e) {
+    if (e.key === 'Enter') {
+      playRound(e);
+    }
+  }
   function playRound(e) {
     let item = e.target.closest('div');
     if (selectedCards.includes(item.id)) return setIsGameOver(true);
     setSelectedCards([...selectedCards, item.id]);
     setCurrentScore((score) => score + 1);
-    shuffleCards();
+    item.blur();
+    setFlip(false);
+    setTimeout(() => {
+      setFlip(true);
+      shuffleCards();
+    }, 100);
   }
   function shuffleCards() {
     let shuffled = spells
       .map((value) => ({ value, sort: Math.random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
-
     setSpells(shuffled);
   }
   function resetGame() {
     setCategory('');
     setCurrentScore(0);
-    let body = document.querySelector('body');
-    body.className = 'blackout';
   }
 
   useEffect(() => {
@@ -69,7 +77,7 @@ const Game = ({
 
   return gameOver ? (
     <div className="gameOver">
-      <h1>
+      <h1 style={{ wordSpacing: '5px' }}>
         {currentScore < 12
           ? 'TARNISHED, YOU CAN DO BETTER THAN THAT!'
           : 'WELL DONE TARNISHED, YOU GOT A PERFECT SCORE!'}
@@ -93,14 +101,25 @@ const Game = ({
       )}
       {spells &&
         spells.map((spell) => (
-          <div
-            id={spell.id}
-            className={'card' + ' ' + category}
-            key={spell.id}
-            onClick={playRound}
-          >
-            <img src={spell.image} alt={spell.name} height={200} width={200} />
-            <h2>{spell.name.toUpperCase()}</h2>
+          <div className="cardOuter" key={spell.id}>
+            <div className={flip ? 'cardInner flip' : 'cardInner'}>
+              <div
+                tabIndex={0}
+                id={spell.id}
+                className={`card front ${category}`}
+                onKeyUp={handleKeyUp}
+                onMouseUp={playRound}
+              >
+                <img
+                  src={spell.image}
+                  alt={spell.name}
+                  height={200}
+                  width={200}
+                />
+                <h2>{spell.name.toUpperCase()}</h2>
+              </div>
+              <div className={`card back ${category}`}></div>
+            </div>
           </div>
         ))}
     </div>

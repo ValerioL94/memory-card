@@ -69,5 +69,5 @@ main {
 .card.incantations:focus {
   outline: goldenrod;
   box-shadow: 5px 5px 25px 5px goldenrod;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
