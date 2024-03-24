@@ -3,12 +3,7 @@ import Game from './Game';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export default function Main({
-  currentScore,
-  setCurrentScore,
-  bestScore,
-  setBestScore,
-}) {
+function Main({ currentScore, setCurrentScore, bestScore, setBestScore }) {
   const [category, setCategory] = useState('');
 
   return (
@@ -51,3 +46,5 @@ Main.propTypes = {
   bestScore: PropTypes.number,
   setBestScore: PropTypes.number,
 };
+
+export default Main;

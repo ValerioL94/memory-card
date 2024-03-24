@@ -1,7 +1,7 @@
 import '../styles/Header.css';
 import PropTypes from 'prop-types';
 
-export default function Header({ score, bestScore }) {
+function Header({ score, bestScore }) {
   return (
     <header>
       <div>
@@ -20,3 +20,5 @@ Header.propTypes = {
   score: PropTypes.number,
   bestScore: PropTypes.number,
 };
+
+export default Header;
