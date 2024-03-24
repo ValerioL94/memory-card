@@ -1,4 +1,5 @@
 import '../styles/Header.css';
+import PropTypes from 'prop-types';
 
 export default function Header({ score, bestScore }) {
   return (
@@ -14,3 +15,8 @@ export default function Header({ score, bestScore }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  score: PropTypes.number,
+  bestScore: PropTypes.number,
+};

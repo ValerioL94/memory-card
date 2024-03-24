@@ -1,5 +1,6 @@
 import '../styles/Game.css';
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 const getRequest = async (url) => {
   const response = await fetch(url);
@@ -124,6 +125,15 @@ const Game = ({
         ))}
     </div>
   );
+};
+
+Game.propTypes = {
+  category: PropTypes.string,
+  setCategory: PropTypes.string,
+  currentScore: PropTypes.number,
+  setCurrentScore: PropTypes.number,
+  bestScore: PropTypes.number,
+  setBestScore: PropTypes.number,
 };
 
 export default Game;

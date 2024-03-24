@@ -1,6 +1,7 @@
 import '../styles/Main.css';
 import Game from './Game';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function Main({
   currentScore,
@@ -43,3 +44,10 @@ export default function Main({
     </main>
   );
 }
+
+Main.propTypes = {
+  currentScore: PropTypes.number,
+  setCurrentScore: PropTypes.number,
+  bestScore: PropTypes.number,
+  setBestScore: PropTypes.number,
+};
